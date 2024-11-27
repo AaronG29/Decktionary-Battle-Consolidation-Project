@@ -1,4 +1,5 @@
 #Import random
+import random
 #First step, start setting up the decktionary battle deck (MAKE SURE TO EXCLUDE KINGS)
 #Players must now get their hands
 #Show the players hand to them so they can play
