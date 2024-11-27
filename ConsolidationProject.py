@@ -8,7 +8,12 @@ def create_deck():
     deck = [(value, suit) for value in values for suit in suits]
     random.shuffle(deck)
     return deck
+
 #Players must now get their hands
+def deal_cards(deck):
+    player1 = deck[:8] #Player 1 deck
+    player2 = deck[8:16] #Player 2 deck
+    return player1, player2, deck[16:]
 #Show the players hand to them so they can play
 #Decide whether of not player one or player two won the hand
 #Create the game loop
