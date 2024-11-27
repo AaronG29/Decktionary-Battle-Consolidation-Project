@@ -4,6 +4,8 @@ import random
 def create_deck():
     suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
     values = list(range(1, 14))  #Range excluding the king
+    values.remove(13)  #Removal of king, number 13
+    deck = [(value, suit) for value in values for suit in suits]
 #Players must now get their hands
 #Show the players hand to them so they can play
 #Decide whether of not player one or player two won the hand
