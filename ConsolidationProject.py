@@ -14,7 +14,17 @@ def deal_cards(deck):
     player1 = deck[:8] #Player 1 deck
     player2 = deck[8:16] #Player 2 deck
     return player1, player2, deck[16:]
+
 #Show the players hand to them so they can play
+def display_hand(player):
+    print("Your hand:")
+    index = 1  
+    for card in player:
+        rank = card[0]  #Rank of the card
+        suit = card[1]  #Suit of the card
+        print(str(index) + ": " + str(rank) + " of " + suit)  #Display to the players their card
+        index += 1  #Index increminted
+
 #Decide whether of not player one or player two won the hand
 #Create the game loop
 #Player one will start
