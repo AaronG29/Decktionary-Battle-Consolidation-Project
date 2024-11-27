@@ -26,6 +26,15 @@ def display_hand(player):
         index += 1  #Index increminted
 
 #Decide whether of not player one or player two won the hand
+def determine_winner(the_leading_card, the_following_card, the_leading_suit):
+    #Check if the next card matches up with the initial card
+    if the_following_card[1] == the_leading_suit:
+        #Comparison of cards in order to decide who the winner is
+        if the_following_card[0] > the_leading_card[0]:
+            return "follow"  #Player 2 wins that round
+    #If card is weaker player 1 wins
+    return "lead"
+
 #Create the game loop
 #Player one will start
 #Player 2 will play after player 1
