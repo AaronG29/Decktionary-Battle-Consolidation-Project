@@ -57,6 +57,19 @@ def play_game():
         display_hand(player2)
         follow_index = int(input("Choose a card to play (1-8): ")) - 1
         the_following_card = player2.pop(follow_index)  #The chosen card of Player 2 is removed from his hand
+
+        #Determining winner of the round
+        winner = determine_winner(the_leading_card, the_following_card, the_leading_suit)
+        if winner == "lead":
+            scores["Player 1"] += 1
+            print("Player 1 wins this round!")
+        else:
+            scores["Player 2"] += 1
+            print("Player 2 wins this round!")
+
+        # Display the current scores
+        print(f"The Scores so far: {scores}")
+        
 #Create the game loop
 #Player one will start
 #Player 2 will play after player 1
