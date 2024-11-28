@@ -69,10 +69,15 @@ def play_game():
 
         # Display the current scores
         print(f"The Scores so far: {scores}")
-        
-#Create the game loop
-#Player one will start
-#Player 2 will play after player 1
-#Decide who won
+
+
 #Final score and winner of Decktionary battle
+    print("\nFinal Scores:")
+    for player, score in scores.items():
+        print(f"{player}: {score}")
+    if scores["Player 1"] > scores["Player 2"]:
+        print("Congrats, Player 1 you win the game!")
+    else:
+        print("Congrats, Player 2 you win the game!")
+
 #Run game
