@@ -51,6 +51,12 @@ def play_game():
         lead_index = int(input("Choose a card to play (1-8): ")) - 1
         the_leading_card = player1.pop(lead_index)  #The chosen card of Player 1 is removed from his hand
         the_leading_suit = the_leading_card[1]  #Suit of leading card
+
+        #Display hand to Player 2
+        print("Player 2's Turn:")
+        display_hand(player2)
+        follow_index = int(input("Choose a card to play (1-8): ")) - 1
+        the_following_card = player2.pop(follow_index)  #The chosen card of Player 2 is removed from his hand
 #Create the game loop
 #Player one will start
 #Player 2 will play after player 1
