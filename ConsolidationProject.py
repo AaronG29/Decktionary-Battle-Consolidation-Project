@@ -41,6 +41,9 @@ def play_game():
     deck = create_deck()
     player1, player2, _ = deal_cards(deck)  #Ignore cards that aren't used
     scores = {"Player 1": 0, "Player 2": 0}  #Tracking scoring
+    #Keep looping through all 8 rounds
+    for round_number in range(1, 9):
+        print("\nRound " + str(round_number) + ":")
 
 #Create the game loop
 #Player one will start
