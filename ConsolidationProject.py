@@ -35,6 +35,13 @@ def determine_winner(the_leading_card, the_following_card, the_leading_suit):
     #If card is weaker player 1 wins
     return "lead"
 
+
+def play_game():
+    #Script a shuffled deck and show both players their cards
+    deck = create_deck()
+    player1, player2, _ = deal_cards(deck)  #Ignore cards that aren't used
+    scores = {"Player 1": 0, "Player 2": 0}  #Tracking scoring
+
 #Create the game loop
 #Player one will start
 #Player 2 will play after player 1
