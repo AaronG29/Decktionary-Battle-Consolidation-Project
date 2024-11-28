@@ -81,3 +81,4 @@ def play_game():
         print("Congrats, Player 2 you win the game!")
 
 #Run game
+play_game()
