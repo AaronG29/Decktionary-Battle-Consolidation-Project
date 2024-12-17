@@ -90,9 +90,17 @@ def play_game():
     for player, score in scores.items():
         print(f"{player}: {score}")
     if scores["Player 1"] > scores["Player 2"]:
-        print("Congrats, Player 1 you win the game!")
+        print("Congrats, Player 1 you won the game!")
     else:
-        print("Congrats, Player 2 you win the game!")
+        print("Congrats, Player 2 you won the game!")
+
+    #Results
+    df = pd.DataFrame(game_data)
+    print("\nGame Data:\n", df)
+
+    sns.barplot(data=df, x="Round", y="Time Taken (seconds)", hue="Winner")
+    plt.title("Time That Was Taken Per Round by Winner")
+    plt.show()
 
 #Run game
 play_game()
