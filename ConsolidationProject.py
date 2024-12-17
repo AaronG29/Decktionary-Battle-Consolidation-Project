@@ -1,5 +1,11 @@
 #Import random
 import random
+#Importing time testing functions
+import time
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 #First step, start setting up the decktionary battle deck (MAKE SURE TO EXCLUDE KINGS)
 def create_deck():
     suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
