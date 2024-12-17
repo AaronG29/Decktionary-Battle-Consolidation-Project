@@ -71,11 +71,16 @@ def play_game():
         winner = determine_winner(the_leading_card, the_following_card, the_leading_suit)
         end_time = time.process_time() 
 
-        scores[winner] += 1
-        print(f"{winner} wins this round!")
+        if winner == "lead":
+            scores["Player 1"] += 1
+            winner_text = "Player 1"
+        else:
+            scores["Player 2"] += 1
+            winner_text = "Player 2"
 
+        print(f"{winner_text} wins this round!")
 
-#Game data
+        #Game data
         game_data.append({
             "Round": round_number,
             "Player 1 Card": the_leading_card,
@@ -85,7 +90,7 @@ def play_game():
         })
 
 
-#Final score and winner of Decktionary battle
+    #Final score and winner of Decktionary battle
     print("\nFinal Scores:")
     for player, score in scores.items():
         print(f"{player}: {score}")
