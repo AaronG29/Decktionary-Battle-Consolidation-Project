@@ -47,6 +47,8 @@ def play_game():
     deck = create_deck()
     player1, player2, _ = deal_cards(deck)  #Ignore cards that aren't used
     scores = {"Player 1": 0, "Player 2": 0}  #Tracking scoring
+    game_data = []
+
     #Keep looping through all 8 rounds
     for round_number in range(1, 9):
         print("\nRound " + str(round_number) + ":")
@@ -64,6 +66,11 @@ def play_game():
         follow_index = int(input("Choose a card to play (1-8): ")) - 1
         the_following_card = player2.pop(follow_index)  #The chosen card of Player 2 is removed from his hand
 
+        #Measure time taken to determine the winner
+        start_time = time.process_time()
+        winner = determine_winner(the_leading_card, the_following_card, the_leading_suit)
+        end_time = time.process_time() 
+
         #Determining winner of the round
         winner = determine_winner(the_leading_card, the_following_card, the_leading_suit)
         if winner == "lead":
@@ -73,7 +80,7 @@ def play_game():
             scores["Player 2"] += 1
             print("Player 2 wins this round!")
 
-        # Display the current scores
+        #Display the current scores
         print(f"The Scores so far: {scores}")
 
 
